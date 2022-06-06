@@ -1,5 +1,5 @@
 .navigation {
-    background: #095159;
+    background: rgb(55, 148, 110);
     height: 80px;
     display: flex;
     flex-direction: row;
@@ -30,7 +30,7 @@
 }
 
 .nav-logo {
-    color: #f9af42;
+    color: rgb(242, 162, 25);
 }
 
 .navigation-menu {
@@ -43,17 +43,17 @@
 }
 
 .navigation-item {
-    color: #f9af42;
+    color: rgb(242, 162, 25);
     border-bottom: 1px solid transparent;
 }
 
 .navigation-item:hover {
-    border-bottom: 1px solid #f9af42;
+    border-bottom: 1px solid rgb(242, 162, 25);
 }
 
 .menu-icon {
     display: none;
-    color: #f9af42;
+    color: rgb(242, 162, 25);
 }
 
 @media screen and (max-width: 960px) {
@@ -62,7 +62,7 @@
     }
 
     .nav-logo {
-        color: #f9af42;
+        color: rgb(242, 162, 25);
         
     }
 
@@ -83,7 +83,7 @@
     }
 
     .navigation-menu.active {
-        background: #095159;
+        background: rgb(45, 140, 100);
         left: 0;
         opacity: 1;
         transition: all 0.6s ease right;

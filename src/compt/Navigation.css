@@ -1,9 +1,9 @@
 .navigation {
-    background: #576fc7;
+    background: #095159;
     height: 80px;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     font-size: 1.2rem;
     position: sticky;
@@ -30,7 +30,7 @@
 }
 
 .nav-logo {
-    color: black;
+    color: #f9af42;
 }
 
 .navigation-menu {
@@ -39,21 +39,21 @@
     justify-content: center;
     list-style: none;
     text-align: center;
-    justify-content: start;
+    justify-content: flex-start;
 }
 
 .navigation-item {
-    color: black;
+    color: #f9af42;
     border-bottom: 1px solid transparent;
 }
 
 .navigation-item:hover {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #f9af42;
 }
 
 .menu-icon {
     display: none;
-    color: black;
+    color: #f9af42;
 }
 
 @media screen and (max-width: 960px) {
@@ -62,8 +62,12 @@
     }
 
     .nav-logo {
-        color: black;
+        color: #f9af42;
         
+    }
+
+    .navigation {
+        justify-content: center;
     }
 
     .navigation-menu {
@@ -79,7 +83,7 @@
     }
 
     .navigation-menu.active {
-        background: #1c2237;
+        background: #095159;
         left: 0;
         opacity: 1;
         transition: all 0.6s ease right;
@@ -97,9 +101,9 @@
     .menu-icon {
         display: block;
         position: absolute;
-        top: 1;
+        top: 0;
         left: 0;
-        transform: translate(50%, 10%);
+        transform: translate(100%, 75%);
         font-size: 1.8rem;
         cursor: pointer;
     }

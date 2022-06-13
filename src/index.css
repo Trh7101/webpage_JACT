@@ -4,3 +4,10 @@
       url("./compt/fonts/PressStart2P-Regular.ttf") format("truetype");
     font-weight: normal;
   }
+
+  @font-face {
+    font-family: "Pixeled";
+    src: local("Pixeled"),
+      url("./compt/fonts/Pixeled.ttf") format("truetype");
+    font-weight: normal;
+  }

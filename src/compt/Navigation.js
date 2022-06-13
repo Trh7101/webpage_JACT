@@ -45,7 +45,7 @@ function Navigation() {
             </li>
             <li className='navigation-item'>
               <Button color="inherit" href="/signup" variant='outlined'>
-                Play Racing Car
+                Play Race Maker
               </Button>
             </li>
           </ul>

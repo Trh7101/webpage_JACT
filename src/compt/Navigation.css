@@ -7,6 +7,10 @@
     opacity: .3;
 }
 
+.font-pixel {
+    font-family: 'PressStart2P';
+}
+
 .ready {
     color: rgb(242, 162, 25);
 }

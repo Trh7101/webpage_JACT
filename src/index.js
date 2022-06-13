@@ -4,6 +4,9 @@ import { CookiesProvider } from 'react-cookie';
 import ReactDOM from 'react-dom/client';
 import App from './App.jsx';
 import { AuthProvider } from './util/AuthContext.js';
+import './compt/fonts/PressStart2P-Regular.ttf';
+import './index.css'
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

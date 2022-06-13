@@ -6,46 +6,39 @@ import TextoHead from "../img/Head.png"
 import play1 from '../img/1P.png'
 import play2 from '../img/2P.png'
 import play3 from '../img/3P.png'
-import play4 from '../img/4P.png'
-import Avatar from '@mui/material/Avatar';
+import play4 from '../img/4P.png' 
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
 import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-
-const theme = createTheme();
 
 export default function AboutUs() {
   return (
     <Container maxWidth={false} disableGutters={true}>
-      <Box sx={{ display: 'flex', flexDirection: 'row', alignItems: 'center',  bgcolor: 'rgb(155,173,183)' }}>
-        <Grid  sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center',  bgcolor: 'transparent'}}>
+      <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly', alignItems: 'stretch',  bgcolor: 'rgb(14,25,58)' }}>
+        <Grid  sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end',  bgcolor: 'transparent' }}>
           <Box
               component="img"
-              sx={{ m: 2, maxHeight: { xs: 0, md: 1000 }, maxWidth: { xs: 0, md: 1000 } }}
+              sx={{ m: 2, height: 80, width: 80, maxHeight: { xs: 0, md: 1000 }, maxWidth: { xs: 0, md: 1000 } }}
               alt="Player Select."
               src={play1}/>
           <Box
               component="img"
-              sx={{ m: 2, maxHeight: { xs: 0, md: 1000 }, maxWidth: { xs: 0, md: 1000 } }}
+              sx={{ m: 2, height: 80, width: 80, maxHeight: { xs: 0, md: 1000 }, maxWidth: { xs: 0, md: 1000 } }}
               alt="Player Select."
               src={play2}/>
           <Box
               component="img"
-              sx={{ m: 2, maxHeight: { xs: 0, md: 1000 }, maxWidth: { xs: 0, md: 1000 } }}
+              sx={{ m: 2, height: 80, width: 80, maxHeight: { xs: 0, md: 1000 }, maxWidth: { xs: 0, md: 1000 } }}
               alt="Player Select."
               src={play3}/>
           <Box
               component="img"
-              sx={{ m: 2, maxHeight: { xs: 0, md: 1000 }, maxWidth: { xs: 0, md: 1000 } }}
+              sx={{ m: 2, height: 80, width: 80, maxHeight: { xs: 0, md: 1000 }, maxWidth: { xs: 0, md: 1000 } }}
               alt="Player Select."
               src={play4}/>
         </Grid>

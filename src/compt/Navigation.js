@@ -39,12 +39,12 @@ function Navigation() {
               </Button>
             </li>
             <li className='navigation-item'>
-              <Button color="inherit" href="/usAbout">
+              <Button color="inherit" href="/landing/AboutUs">
                 About Us
               </Button>
             </li>
             <li className='navigation-item'>
-              <Button color="inherit" href="/signup" variant='outlined'>
+              <Button color="inherit" href="/landing/auth" variant='outlined'>
                 Play Race Maker
               </Button>
             </li>

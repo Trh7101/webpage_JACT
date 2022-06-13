@@ -21,7 +21,7 @@ export default function App() {
         <Route path="/landing" element={<Wrapper />}>
           <Route path="home" element={<Home />} />
           <Route path='auth' element={<Auth />} />
-          <Route path='UsAbout' element={<AboutUs />} />
+          <Route path='AboutUs' element={<AboutUs />} />
         </Route>
         <Route path='/app' element={<RequireAuth><AppShell /></RequireAuth>}>
           <Route path="home" element={<AppHome />} />

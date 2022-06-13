@@ -1,3 +1,16 @@
+.videoTag {
+    position: absolute;
+    display: block;
+    object-fit: cover;
+    z-index: -1;
+    width: 100%;
+    opacity: .3;
+}
+
+.ready {
+    color: rgb(242, 162, 25);
+}
+
 .colors {
     color: rgb(55, 148, 110);
     color: rgb(242, 162, 25);
@@ -140,7 +153,6 @@
 
     .nav-logo {
         color: rgb(242, 162, 25);
-        
     }
 
     .navigation {

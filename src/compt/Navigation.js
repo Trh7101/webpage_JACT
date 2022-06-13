@@ -8,7 +8,6 @@ function Navigation() {
   const setButton = useState(true);
 
   const handleClick = () => setClick(!click);
-  const closeMobileMenu = () => setClick(false);
 
   const showButton = () => {
     if (window.innerWidth <= 960) {
@@ -23,13 +22,12 @@ function Navigation() {
   return (
     <>
       <div className='navigation'>
-        <Button href='/'
-          className='nav-logo'
-          color='inherit'
-          disableElevation>
-          <SportsEsports color="inherit" />
-          JACT Studio
-        </Button>
+        <ul className='nav-logo'>
+          <Button href='/' color='inherit' disableElevation>
+            <SportsEsports color="inherit" />
+              JACT Studio
+          </Button>
+        </ul>
         <div className='navigation-container.container'>
           <div className='menu-icon' onClick={handleClick} >
             {click ? <Close /> : <Menu />}
@@ -45,7 +43,7 @@ function Navigation() {
                 About Us
               </Button>
             </li>
-            <li>
+            <li className='navigation-item'>
               <Button color="inherit" href="/signup" variant='outlined'>
                 Play Racing Car
               </Button>

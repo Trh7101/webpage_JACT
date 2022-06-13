@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import { useApi } from './Api';
 import { Center } from './Center';
 import { Unity, useUnityContext } from "react-unity-webgl";
+import { useAuth } from '../util/AuthContext';
 
 export const Draft = () => {
     let { id } = useParams();
@@ -14,6 +15,7 @@ export const Draft = () => {
     const [loadedFunc, setLoadedFunc] = useState(false);
     const theme = useTheme()
     const api = useApi()
+    const auth = useAuth()
 
     const { unityProvider } = useUnityContext({
         loaderUrl: '/Build/RaceMakerBuild.loader.js',
@@ -42,9 +44,10 @@ export const Draft = () => {
 
     useEffect(() => {
         const rmBridge = {
-            config: () => ({
+            config: () => JSON.stringify({
                 type: 'draft',
                 id: parseInt(id),
+                token: auth.token(),
             }),
         };
         window.rmBridge = rmBridge;

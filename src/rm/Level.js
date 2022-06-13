@@ -2,8 +2,10 @@ import { Box, CircularProgress, Grid, Typography, Card, CardActionArea, CardCont
 import { useTheme } from '@mui/system';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { useAuth } from '../util/AuthContext';
 import { useApi } from './Api';
 import { Center } from './Center';
+import { Unity, useUnityContext } from "react-unity-webgl";
 
 export const Level = () => {
     let { id } = useParams();
@@ -13,6 +15,14 @@ export const Level = () => {
     const [error, setError] = useState(false);
     const theme = useTheme()
     const api = useApi()
+    const auth = useAuth()
+
+    const { unityProvider } = useUnityContext({
+        loaderUrl: '/Build/RaceMakerBuild.loader.js',
+        dataUrl: "/Build/RaceMakerBuild.data",
+        frameworkUrl: "/Build/RaceMakerBuild.framework.js",
+        codeUrl: '/Build/RaceMakerBuild.wasm'
+    })
 
     const load = async () => {
         const [level, error] = await api.getLevel(id)
@@ -33,6 +43,14 @@ export const Level = () => {
     }
 
     useEffect(() => {
+        const rmBridge = {
+            config: () => JSON.stringify({
+                type: 'draft',
+                id: parseInt(id),
+                token: auth.token(),
+            }),
+        };
+        window.rmBridge = rmBridge;
         load()
     }, [])
 
@@ -60,7 +78,7 @@ export const Level = () => {
             <Typography>{level.description}</Typography>
             <Typography>{`Dificultad ${level.difficulty}`}</Typography>
             <Typography sx={{ mb: theme.spacing(2) }}>{`Creado ${level.created}${level.updated && level.updated.valid ? ' · Actualizado: ' + level.updated.date : ''}`}</Typography>
-            <div style={{ backgroundColor: 'red', height: '40vh', 'width': '80vw' }}></div>
+            <Unity style={{ height: '50vh', width: '80vw' }} unityProvider={unityProvider} />
             {
                 otherLevels.length ? (
                     <Grid container spacing={1}>

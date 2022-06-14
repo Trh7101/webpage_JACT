@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
-import { SportsEsports } from '@mui/icons-material';
 import { Button } from '@mui/material';
-import './Navigation.css';
-import HomeB from './BUTTONS/Home.png';
-import AboutB from './BUTTONS/About.png';
-import PlayB from './BUTTONS/Play.png';
-import burger from './BUTTONS/Burger.png';
-import close from './BUTTONS/X.png';
 import Box from '@mui/material/Box';
+import './Navigation.css';
+import HomeB from './BUTTONS/Home-export.png';
+import AboutB from './BUTTONS/About-export.png';
+import PlayB from './BUTTONS/Play-export.png';
+import burger from './BUTTONS/Burger-export.png';
+import close from './BUTTONS/X-export.png';
+import Logo from './BUTTONS/Logo2.png';
+
 
 function Navigation() {
   const [click, setClick] = useState(false);
@@ -30,8 +31,7 @@ function Navigation() {
       <div className='navigation'>
         <ul className='nav-logo'>
           <Button href='/' color='inherit' disableElevation>
-            <SportsEsports color="inherit" />
-              JACT Studio
+            <img src={Logo} width="232.5" height="40.5" />
           </Button>
         </ul>
         <div className='navigation-container.container'>

@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
-import { Menu, Close, SportsEsports } from '@mui/icons-material';
+import { SportsEsports } from '@mui/icons-material';
 import { Button } from '@mui/material';
 import './Navigation.css';
 import HomeB from './BUTTONS/Home.png';
 import AboutB from './BUTTONS/About.png';
 import PlayB from './BUTTONS/Play.png';
+import burger from './BUTTONS/Burger.png';
+import close from './BUTTONS/X.png';
+import Box from '@mui/material/Box';
 
 function Navigation() {
   const [click, setClick] = useState(false);
@@ -32,9 +35,13 @@ function Navigation() {
           </Button>
         </ul>
         <div className='navigation-container.container'>
-          <div className='menu-icon' onClick={handleClick} >
-            {click ? <Close /> : <Menu />}
-          </div>
+          <ul classname='icon-menu'>
+          <Box sx={{ display: { xs: 'block', md: 'none' } }} onClick={handleClick} >
+            {click ?
+              <img src={close} height='42.5' width='42.5'/> : <img src={burger} height='42.5' width='42.5'/>
+            }
+          </Box>
+          </ul>
           <ul className={click ? 'navigation-menu active' : 'navigation-menu'}>
             <Button variant='text' href="/">
               <img src={HomeB} width="92.5" height="42.5" />

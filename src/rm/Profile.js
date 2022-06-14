@@ -2,10 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useApi } from './Api';
 import { Center } from './Center';
+import { useAuth } from '../util/AuthContext';
 import { Box, CircularProgress, Divider, Grid, Typography, Card, CardActionArea, CardContent, useTheme, CardActions, Button } from '@mui/material';
 import SignOutBttn from './../compt/BUTTONS/SignOut-export.png';
 
 export const Profile = () => {
+    const auth = useAuth();
     const [profile, setProfile] = useState({})
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(false)
@@ -73,7 +75,7 @@ export const Profile = () => {
             <Typography>{`Name: ${profile.name}`}</Typography>
             <Typography>{`Email: ${profile.email}`}</Typography>
             <Typography>{`Date of creation: ${profile.joined}`}</Typography>
-            <Button href='/'>
+            <Button  onClick={async () => { navigate('/landing/home');  auth.signOut()}}>
                 <img src={SignOutBttn} width="185" height="42.5"/>
             </Button>
             <Divider sx={{ mt: theme.spacing(1), mb: theme.spacing(1) }} />

@@ -174,7 +174,7 @@ export function PrimarySearchAppBar() {
                     >
                         <MenuIcon />
                     </IconButton> */}
-                    <Button href="/app/home">
+                    <Button onClick={() => navigate('/app/home')} >
                             <img src={GameLogo}/>
                     </Button>
                     <Search>
@@ -189,7 +189,7 @@ export function PrimarySearchAppBar() {
                     </Search>
                     <Box sx={{ flexGrow: 1 }} />
                     <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-                        <Button href="/app/draft/0">
+                        <Button onClick={() => navigate('/app/draft/0')}>
                             <img src={NewBttn} width="92.5" height="42.5"/>
                         </Button>
                         {/* <Button size="large" aria-label="open user levels" color="inherit">
@@ -202,7 +202,7 @@ export function PrimarySearchAppBar() {
                         >
                             Drafts
                         </Button> */}
-                        <Button aria-label="account of current user" aria-controls={menuId} aria-haspopup="true" href='/app/profile/0'>
+                        <Button aria-label="account of current user" aria-controls={menuId} aria-haspopup="true" onClick={() => navigate('/app/profile/0')}>
                             <img src={userbttn} width="42.5" height="42.5"/>
                         </Button>      
                     </Box>

@@ -15,8 +15,10 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
-import AddIcon from '@mui/icons-material/Add';
 import { useNavigate } from 'react-router-dom';
+import GameLogo from './../compt/BUTTONS/LogoStacked.png';
+import NewBttn from './../compt/BUTTONS/SignIn-export.png';
+
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -159,7 +161,7 @@ export function PrimarySearchAppBar() {
 
     return (
         <Box sx={{ flexGrow: 1 }}>
-            <AppBar position="static" sx={{ justifyContent: 'space-between' }}>
+            <AppBar position="static" sx={{ justifyContent: 'space-between', backgroundColor: "rgb(211,48,100)"}}>
                 <Toolbar>
                     {/* <IconButton
                         size="large"
@@ -170,12 +172,8 @@ export function PrimarySearchAppBar() {
                     >
                         <MenuIcon />
                     </IconButton> */}
-                    <Button size="large" color="inherit" onClick={() => {
-                        navigate("/app/home")
-                    }}>
-                        <Typography variant='h4' fontFamily={'PublicPixel'}>
-                            RACEMAKER
-                        </Typography>
+                    <Button href="/app/home">
+                            <img src={GameLogo}/>
                     </Button>
                     <Search>
                         <SearchIconWrapper>
@@ -189,12 +187,8 @@ export function PrimarySearchAppBar() {
                     </Search>
                     <Box sx={{ flexGrow: 1 }} />
                     <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-                        <Button size="large" color="inherit" startIcon={<AddIcon />} onClick={() => {
-                            navigate("draft/0")
-                        }}>
-                            <Typography variant='h8' fontFamily={'PublicPixel'}>
-                                Nuevo
-                            </Typography>
+                        <Button href="draft/0">
+                            <img src={NewBttn} width="185" height="42.5"/>
                         </Button>
                         {/* <Button size="large" aria-label="open user levels" color="inherit">
                             Mis niveles

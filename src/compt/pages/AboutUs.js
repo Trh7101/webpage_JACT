@@ -51,7 +51,7 @@ export default function AboutUs() {
 
           <Box sx={{
             display: 'flex', flexDirection: 'row', alignItems: 'center',
-            m: 1, maxWidth: 800, backgroundColor: 'rgb(118,66,138)',
+            m: 1, maxWidth: 800, backgroundColor: 'rgb(236,182,29)',
           }}>
             <Box
               component="img"

@@ -62,17 +62,17 @@ export const Profile = () => {
         return (
             <Center>
                 <Typography variant='h4' fontFamily={'PublicPixel'}>Error</Typography>
-                <Typography>Ocurrió un error cargando el perfil, por favor intenta de nuevo</Typography>
+                <Typography>An error ocurred while loading the profile, pleas try agan</Typography>
             </Center>
         )
     }
 
     return (
         <Box sx={{ padding: theme.spacing(2) }}>
-            <Typography variant='h5' fontFamily={'PublicPixel'}>Perfil</Typography>
-            <Typography>{`Nombre: ${profile.name}`}</Typography>
+            <Typography variant='h5' fontFamily={'PublicPixel'}>Profile</Typography>
+            <Typography>{`Name: ${profile.name}`}</Typography>
             <Typography>{`Email: ${profile.email}`}</Typography>
-            <Typography>{`Fecha de creación: ${profile.joined}`}</Typography>
+            <Typography>{`Date of creation: ${profile.joined}`}</Typography>
             <Button href='/'>
                 <img src={SignOutBttn} width="185" height="42.5"/>
             </Button>
@@ -94,11 +94,11 @@ export const Profile = () => {
                                 <CardActions>
                                     <Button size='small' onClick={() => {
                                         navigate(`/app/draft/${c.id}`)
-                                    }}>Editar</Button>
+                                    }}>Edit</Button>
                                     <Button size='small' color='error' onClick={async () => {
                                         await api.deleteDraft(c.id)
                                         load()
-                                    }}>Eliminar</Button>
+                                    }}>Delete</Button>
                                 </CardActions>
                             </Card>
                         </Grid>))}
@@ -106,7 +106,7 @@ export const Profile = () => {
                     <Divider sx={{ mt: theme.spacing(1), mb: theme.spacing(1) }} />
                 </React.Fragment>
             ) : null}
-            <Typography variant='h5' fontFamily={'PublicPixel'} sx={{ mb: theme.spacing(1) }}>Niveles</Typography>
+            <Typography variant='h5' fontFamily={'PublicPixel'} sx={{ mb: theme.spacing(1) }}>Levels</Typography>
             <Grid container spacing={1}>
                 {levels.map((c) => (<Grid item xs={12} sm={3} key={c.id}>
                     <Card variant='outlined'>
@@ -114,7 +114,7 @@ export const Profile = () => {
                             <CardContent>
                                 <Typography variant='h6' fontFamily={'PublicPixel'}>{c.name}</Typography>
                                 <Typography>{c.description}</Typography>
-                                <Typography>{`Dificultad: ${c.difficulty}`}</Typography>
+                                <Typography>{`Difficulty: ${c.difficulty}`}</Typography>
                             </CardContent>
                         </CardActionArea>
                         <CardActions>
@@ -124,7 +124,7 @@ export const Profile = () => {
                             <Button size='small' color='error' onClick={async () => {
                                 await api.deleteLevel(c.id)
                                 load()
-                            }}>Eliminar</Button>
+                            }}>Delete</Button>
                         </CardActions>
                     </Card>
                 </Grid>))}

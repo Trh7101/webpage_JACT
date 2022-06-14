@@ -181,13 +181,13 @@ export function PrimarySearchAppBar() {
                         </SearchIconWrapper>
                         <StyledInputBase
                             sx={{ flex: 1, width: '50vw' }}
-                            placeholder="Buscar…"
+                            placeholder="Search..."
                             inputProps={{ 'aria-label': 'search' }}
                         />
                     </Search>
                     <Box sx={{ flexGrow: 1 }} />
                     <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-                        <Button href="draft/0">
+                        <Button href="/app/draft/0">
                             <img src={NewBttn} width="185" height="42.5"/>
                         </Button>
                         {/* <Button size="large" aria-label="open user levels" color="inherit">

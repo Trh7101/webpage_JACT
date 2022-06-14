@@ -66,7 +66,7 @@ export const Level = () => {
         return (
             <Center>
                 <Typography variant='h4' fontFamily={'PublicPixel'}>Error</Typography>
-                <Typography>Ocurrió un error cargando el nivel, por favor intenta de nuevo</Typography>
+                <Typography>An error ocurred while loading the level, pleas try agan</Typography>
             </Center>
         )
     }

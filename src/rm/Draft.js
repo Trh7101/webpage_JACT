@@ -67,7 +67,7 @@ export const Draft = () => {
         return (
             <Center>
                 <Typography variant='h4' fontFamily={'PublicPixel'} >Error</Typography>
-                <Typography>Ocurrió un error cargando el draft, por favor intenta de nuevo</Typography>
+                <Typography>An error ocurred while loading the draft, pleas try agan</Typography>
             </Center>
         )
     }

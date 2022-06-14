@@ -15,8 +15,12 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
-import AddIcon from '@mui/icons-material/Add';
 import { useNavigate } from 'react-router-dom';
+import GameLogo from './../compt/BUTTONS/LogoStacked.png';
+import NewBttn from './../compt/BUTTONS/New-export.png';
+import userbttn from './../compt/BUTTONS/User-export.png';
+import searchbttn from './../compt/BUTTONS/Magnifier-export.png';
+
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -159,7 +163,7 @@ export function PrimarySearchAppBar() {
 
     return (
         <Box sx={{ flexGrow: 1 }}>
-            <AppBar position="static" sx={{ justifyContent: 'space-between' }}>
+            <AppBar position="static" sx={{ justifyContent: 'space-between', backgroundColor: "rgb(211,48,100)"}}>
                 <Toolbar>
                     {/* <IconButton
                         size="large"
@@ -170,30 +174,23 @@ export function PrimarySearchAppBar() {
                     >
                         <MenuIcon />
                     </IconButton> */}
-                    <Typography
-                        variant="h6"
-                        noWrap
-                        component="div"
-                        sx={{ display: { xs: 'none', sm: 'block' } }}
-                    >
-                        RaceMaker
-                    </Typography>
+                    <Button href="/app/home">
+                            <img src={GameLogo}/>
+                    </Button>
                     <Search>
                         <SearchIconWrapper>
-                            <SearchIcon />
+                            <img src={searchbttn} width="16" height="16"/>
                         </SearchIconWrapper>
                         <StyledInputBase
                             sx={{ flex: 1, width: '50vw' }}
-                            placeholder="Buscar…"
+                            placeholder="Search..."
                             inputProps={{ 'aria-label': 'search' }}
                         />
                     </Search>
                     <Box sx={{ flexGrow: 1 }} />
                     <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-                        <Button size="large" color="inherit" startIcon={<AddIcon />} onClick={() => {
-                            navigate("draft/0")
-                        }}>
-                            Nuevo
+                        <Button href="/app/draft/0">
+                            <img src={NewBttn} width="92.5" height="42.5"/>
                         </Button>
                         {/* <Button size="large" aria-label="open user levels" color="inherit">
                             Mis niveles
@@ -205,18 +202,9 @@ export function PrimarySearchAppBar() {
                         >
                             Drafts
                         </Button> */}
-                        <IconButton
-                            size="large"
-                            edge="end"
-                            aria-label="account of current user"
-                            aria-controls={menuId}
-                            aria-haspopup="true"
-                            onClick={() => navigate('profile/0')}
-                            //onClick={handleProfileMenuOpen}
-                            color="inherit"
-                        >
-                            <AccountCircle />
-                        </IconButton>
+                        <Button aria-label="account of current user" aria-controls={menuId} aria-haspopup="true" href='/app/profile/0'>
+                            <img src={userbttn} width="42.5" height="42.5"/>
+                        </Button>      
                     </Box>
                     <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
                         <IconButton

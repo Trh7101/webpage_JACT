@@ -47,8 +47,8 @@ export const AppHome = () => {
     if (error) {
         return (
             <Center>
-                <Typography variant='h4'>Error</Typography>
-                <Typography>Ocurrió un error cargando los niveles, por favor intenta de nuevo</Typography>
+                <Typography variant='h4' fontFamily={'PublicPixel'}>Error</Typography>
+                <Typography>An error ocurred while loading the levels, pleas try agan</Typography>
             </Center>
         )
     }
@@ -56,26 +56,26 @@ export const AppHome = () => {
     return (
         <Grid container spacing={1} sx={{ padding: theme.spacing(2) }}>
             <Grid item xs={12}>
-                <Typography variant='h5'>Colecciones Populares</Typography>
+                <Typography variant='h5' fontFamily={'PublicPixel'}>Top Collections</Typography>
             </Grid>
             {collections.map((c) => (<Grid item xs={12} sm={3} key={c.id}>
                 <Card variant='outlined'>
                     <CardActionArea onClick={() => { }}>
                         <CardContent>
-                            <Typography variant='h6'>{c.name}</Typography>
+                            <Typography variant='h6' fontFamily={'PublicPixel'}>{c.name}</Typography>
                             <Typography>{c.description}</Typography>
                         </CardContent>
                     </CardActionArea>
                 </Card>
             </Grid>))}
             <Grid item xs={12}>
-                <Typography variant='h5'>Niveles Populares</Typography>
+                <Typography variant='h5' fontFamily={'PublicPixel'}>Best Levels</Typography>
             </Grid>
             {levels.map((c) => (<Grid item xs={12} sm={3} key={c.id}>
                 <Card variant='outlined'>
                     <CardActionArea onClick={() => { }}>
                         <CardContent>
-                            <Typography variant='h6'>{c.name}</Typography>
+                            <Typography variant='h6' fontFamily={'PublicPixel'}>{c.name}</Typography>
                             <Typography>{c.description}</Typography>
                         </CardContent>
                     </CardActionArea>

@@ -1,7 +1,14 @@
 import React, { useState } from 'react';
-import { Menu, Close, SportsEsports } from '@mui/icons-material';
 import { Button } from '@mui/material';
-import './Navigation.css'
+import Box from '@mui/material/Box';
+import './Navigation.css';
+import HomeB from './BUTTONS/Home-export.png';
+import AboutB from './BUTTONS/About-export.png';
+import PlayB from './BUTTONS/Play-export.png';
+import burger from './BUTTONS/Burger-export.png';
+import close from './BUTTONS/X-export.png';
+import Logo from './BUTTONS/Logo2.png';
+
 
 function Navigation() {
   const [click, setClick] = useState(false);
@@ -22,32 +29,25 @@ function Navigation() {
   return (
     <>
       <div className='navigation'>
-        <ul className='nav-logo'>
-          <Button href='/' color='inherit' disableElevation>
-            <SportsEsports color="inherit" />
-              JACT Studio
-          </Button>
-        </ul>
+        <Button href='/' disableElevation>
+          <img src={Logo} width="232.5" height="40.5" />
+        </Button>
         <div className='navigation-container.container'>
-          <div className='menu-icon' onClick={handleClick} >
-            {click ? <Close /> : <Menu />}
-          </div>
+          <Box sx={{ display: { xs: 'block', md: 'none' } }} onClick={handleClick} >
+            {click ?
+              <img src={close} height='42.5' width='42.5'/> : <img src={burger} height='42.5' width='42.5'/>
+            }
+          </Box>
           <ul className={click ? 'navigation-menu active' : 'navigation-menu'}>
-            <li className='navigation-item'>
-              <Button color="inherit" href="/">
-                Home
-              </Button>
-            </li>
-            <li className='navigation-item'>
-              <Button color="inherit" href="/landing/AboutUs">
-                About Us
-              </Button>
-            </li>
-            <li className='navigation-item'>
-              <Button color="inherit" href="/landing/auth" variant='outlined'>
-                Play Race Maker
-              </Button>
-            </li>
+            <Button variant='text' href="/">
+              <img src={HomeB} width="92.5" height="42.5" />
+            </Button>
+            <Button variant='text' href="/landing/AboutUs">
+              <img src={AboutB} width="92.5" height="42.5" />
+            </Button>
+            <Button variant='text' href="/landing/auth">
+              <img src={PlayB} width="92.5" height="42.5" />
+            </Button>
           </ul>
         </div>
       </div>

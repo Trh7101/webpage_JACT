@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
-import { useApi } from './Api'
+import React, { useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import { useApi } from './Api';
 import { Center } from './Center';
 import { Box, CircularProgress, Divider, Grid, Typography, Card, CardActionArea, CardContent, useTheme, CardActions, Button } from '@mui/material';
+import SignOutBttn from './../compt/BUTTONS/SignOut-export.png';
 
 export const Profile = () => {
     const [profile, setProfile] = useState({})
@@ -60,22 +61,25 @@ export const Profile = () => {
     if (error) {
         return (
             <Center>
-                <Typography variant='h4'>Error</Typography>
-                <Typography>Ocurrió un error cargando el perfil, por favor intenta de nuevo</Typography>
+                <Typography variant='h4' fontFamily={'PublicPixel'}>Error</Typography>
+                <Typography>An error ocurred while loading the profile, pleas try agan</Typography>
             </Center>
         )
     }
 
     return (
         <Box sx={{ padding: theme.spacing(2) }}>
-            <Typography variant='h5'>Perfil</Typography>
-            <Typography>{`Nombre: ${profile.name}`}</Typography>
+            <Typography variant='h5' fontFamily={'PublicPixel'}>Profile</Typography>
+            <Typography>{`Name: ${profile.name}`}</Typography>
             <Typography>{`Email: ${profile.email}`}</Typography>
-            <Typography>{`Fecha de creación: ${profile.joined}`}</Typography>
+            <Typography>{`Date of creation: ${profile.joined}`}</Typography>
+            <Button href='/'>
+                <img src={SignOutBttn} width="185" height="42.5"/>
+            </Button>
             <Divider sx={{ mt: theme.spacing(1), mb: theme.spacing(1) }} />
             {id == 0 ? (
                 <React.Fragment>
-                    <Typography variant='h5' sx={{ mb: theme.spacing(1) }}>Drafts</Typography>
+                    <Typography variant='h5' fontFamily={'PublicPixel'} sx={{ mb: theme.spacing(1) }}>Drafts</Typography>
                     <Grid container spacing={1}>
                         {drafts.map((c) => (<Grid item xs={12} sm={3} key={c.id}>
                             <Card variant='outlined'>
@@ -83,18 +87,18 @@ export const Profile = () => {
                                     navigate(`/app/draft/${c.id}`)
                                 }}>
                                     <CardContent>
-                                        <Typography variant='h6'>{c.name}</Typography>
+                                        <Typography variant='h6' fontFamily={'PublicPixel'}>{c.name}</Typography>
                                         <Typography>{c.description}</Typography>
                                     </CardContent>
                                 </CardActionArea>
                                 <CardActions>
                                     <Button size='small' onClick={() => {
                                         navigate(`/app/draft/${c.id}`)
-                                    }}>Editar</Button>
+                                    }}>Edit</Button>
                                     <Button size='small' color='error' onClick={async () => {
                                         await api.deleteDraft(c.id)
                                         load()
-                                    }}>Eliminar</Button>
+                                    }}>Delete</Button>
                                 </CardActions>
                             </Card>
                         </Grid>))}
@@ -102,28 +106,25 @@ export const Profile = () => {
                     <Divider sx={{ mt: theme.spacing(1), mb: theme.spacing(1) }} />
                 </React.Fragment>
             ) : null}
-            <Typography variant='h5' sx={{ mb: theme.spacing(1) }}>Niveles</Typography>
+            <Typography variant='h5' fontFamily={'PublicPixel'} sx={{ mb: theme.spacing(1) }}>Levels</Typography>
             <Grid container spacing={1}>
                 {levels.map((c) => (<Grid item xs={12} sm={3} key={c.id}>
                     <Card variant='outlined'>
                         <CardActionArea onClick={() => { navigate(`/app/level/${id}`) }}>
                             <CardContent>
-                                <Typography variant='h6'>{c.name}</Typography>
+                                <Typography variant='h6' fontFamily={'PublicPixel'}>{c.name}</Typography>
                                 <Typography>{c.description}</Typography>
-                                <Typography>{`Dificultad: ${c.difficulty}`}</Typography>
+                                <Typography>{`Difficulty: ${c.difficulty}`}</Typography>
                             </CardContent>
                         </CardActionArea>
                         <CardActions>
-                            <Button size='small' onClick={() => {
-                                navigate(`draft/${c.id}`)
-                            }}>Editar</Button>
                             <Button size='small' onClick={() => {
                                 navigate(`draft/${c.id}`)
                             }}>Analytics</Button>
                             <Button size='small' color='error' onClick={async () => {
                                 await api.deleteLevel(c.id)
                                 load()
-                            }}>Eliminar</Button>
+                            }}>Delete</Button>
                         </CardActions>
                     </Card>
                 </Grid>))}

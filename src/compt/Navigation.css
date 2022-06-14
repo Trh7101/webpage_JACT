@@ -136,15 +136,6 @@
     justify-content: flex-start;
 }
 
-.navigation-item {
-    color: rgb(242, 162, 25);
-    border-bottom: 1px solid transparent;
-}
-
-.navigation-item:hover {
-    border-bottom: 1px solid rgb(242, 162, 25);
-}
-
 .menu-icon {
     display: none;
     color: rgb(242, 162, 25);

@@ -10,6 +10,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import BackgroundVid from '../img/vid1_racemaker.mp4';
+import PlayB from './../BUTTONS/Play2.png';
 
 
 export default function Home() {
@@ -33,11 +34,9 @@ export default function Home() {
         </Typography>
       </Box>
       <Box sx={{borderTop: 100, borderTopColor: 'transparent'}}>
-        <ul className='ready'>
-          <Button color="inherit" variant='contained' href="/signup" size='large'>
-            Play Race Maker
-          </Button>
-        </ul>
+            <Button variant='text' href="/landing/auth">
+              <img src={PlayB} width="185" height="42.5"/>
+            </Button>
       </Box>
     </Container>
 

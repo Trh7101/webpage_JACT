@@ -170,14 +170,13 @@ export function PrimarySearchAppBar() {
                     >
                         <MenuIcon />
                     </IconButton> */}
-                    <Typography
-                        variant="h6"
-                        noWrap
-                        component="div"
-                        sx={{ display: { xs: 'none', sm: 'block' } }}
-                    >
-                        RaceMaker
-                    </Typography>
+                    <Button size="large" color="inherit" onClick={() => {
+                        navigate("/app/home")
+                    }}>
+                        <Typography variant='h4' fontFamily={'PublicPixel'}>
+                            RACEMAKER
+                        </Typography>
+                    </Button>
                     <Search>
                         <SearchIconWrapper>
                             <SearchIcon />
@@ -193,7 +192,9 @@ export function PrimarySearchAppBar() {
                         <Button size="large" color="inherit" startIcon={<AddIcon />} onClick={() => {
                             navigate("draft/0")
                         }}>
-                            Nuevo
+                            <Typography variant='h8' fontFamily={'PublicPixel'}>
+                                Nuevo
+                            </Typography>
                         </Button>
                         {/* <Button size="large" aria-label="open user levels" color="inherit">
                             Mis niveles

@@ -11,3 +11,10 @@
       url("./compt/fonts/Pixeled.ttf") format("truetype");
     font-weight: normal;
   }
+
+  @font-face {
+    font-family: "PublicPixel";
+    src: local("PublicPixel"),
+      url("./compt/fonts/PublicPixel-0W5Kv.ttf") format("truetype");
+    font-weight: normal;
+  }

@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { Menu, Close, SportsEsports } from '@mui/icons-material';
 import { Button } from '@mui/material';
-import './Navigation.css'
+import './Navigation.css';
+import HomeB from './BUTTONS/Home.png';
+import AboutB from './BUTTONS/About.png';
+import PlayB from './BUTTONS/Play.png';
 
 function Navigation() {
   const [click, setClick] = useState(false);
@@ -33,21 +36,15 @@ function Navigation() {
             {click ? <Close /> : <Menu />}
           </div>
           <ul className={click ? 'navigation-menu active' : 'navigation-menu'}>
-            <li className='navigation-item'>
-              <Button color="inherit" href="/">
-                Home
-              </Button>
-            </li>
-            <li className='navigation-item'>
-              <Button color="inherit" href="/landing/AboutUs">
-                About Us
-              </Button>
-            </li>
-            <li className='navigation-item'>
-              <Button color="inherit" href="/landing/auth" variant='outlined'>
-                Play Race Maker
-              </Button>
-            </li>
+            <Button variant='text' href="/">
+              <img src={HomeB} width="92.5" height="42.5" />
+            </Button>
+            <Button variant='text' href="/landing/AboutUs">
+              <img src={AboutB} width="92.5" height="42.5" />
+            </Button>
+            <Button variant='text' href="/landing/auth">
+              <img src={PlayB} width="92.5" height="42.5" />
+            </Button>
           </ul>
         </div>
       </div>

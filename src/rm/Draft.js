@@ -66,7 +66,7 @@ export const Draft = () => {
     if (error) {
         return (
             <Center>
-                <Typography variant='h4'>Error</Typography>
+                <Typography variant='h4' fontFamily={'PublicPixel'} >Error</Typography>
                 <Typography>Ocurrió un error cargando el draft, por favor intenta de nuevo</Typography>
             </Center>
         )
@@ -76,7 +76,7 @@ export const Draft = () => {
 
     return (
         <Box sx={{ padding: theme.spacing(2) }}>
-            <Typography variant='h5'>{draft.name}</Typography>
+            <Typography variant='h5' fontFamily={'PublicPixel'} >{draft.name}</Typography>
             <Typography sx={{ mb: theme.spacing(2) }}>{draft.description}</Typography>
             {
                 loadedFunc ? <Unity style={{ height: '50vh', width: '80vw' }} unityProvider={unityProvider} /> : null

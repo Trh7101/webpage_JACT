@@ -65,7 +65,7 @@ export const Level = () => {
     if (error) {
         return (
             <Center>
-                <Typography variant='h4'>Error</Typography>
+                <Typography variant='h4' fontFamily={'PublicPixel'}>Error</Typography>
                 <Typography>Ocurrió un error cargando el nivel, por favor intenta de nuevo</Typography>
             </Center>
         )
@@ -73,8 +73,8 @@ export const Level = () => {
 
     return (
         <Box sx={{ padding: theme.spacing(2) }}>
-            <Typography variant='h5'>{level.name}</Typography>
-            <Typography variant='h6'>{level.user.name}</Typography>
+            <Typography variant='h5' fontFamily={'PublicPixel'}>{level.name}</Typography>
+            <Typography variant='h6' fontFamily={'PublicPixel'}>{level.user.name}</Typography>
             <Typography>{level.description}</Typography>
             <Typography>{`Dificultad ${level.difficulty}`}</Typography>
             <Typography sx={{ mb: theme.spacing(2) }}>{`Creado ${level.created}${level.updated && level.updated.valid ? ' · Actualizado: ' + level.updated.date : ''}`}</Typography>
@@ -83,13 +83,13 @@ export const Level = () => {
                 otherLevels.length ? (
                     <Grid container spacing={1}>
                         <Grid item xs={12}>
-                            <Typography variant='h5' sx={{ mb: theme.spacing(1), mt: theme.spacing(2) }}>Te puede gustar</Typography>
+                            <Typography fontFamily={'PublicPixel'} variant='h5' sx={{ mb: theme.spacing(1), mt: theme.spacing(2) }}>Te puede gustar</Typography>
                         </Grid>
                         {otherLevels.map((c) => (<Grid item xs={12} sm={3} key={c.id}>
                             <Card variant='outlined'>
                                 <CardActionArea onClick={() => { }}>
                                     <CardContent>
-                                        <Typography variant='h6'>{c.name}</Typography>
+                                        <Typography variant='h6' fontFamily={'PublicPixel'}>{c.name}</Typography>
                                         <Typography>{c.description}</Typography>
                                         <Typography>{`Dificultad: ${c.difficulty}`}</Typography>
                                     </CardContent>

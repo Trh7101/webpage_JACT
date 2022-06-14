@@ -17,7 +17,9 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import { useNavigate } from 'react-router-dom';
 import GameLogo from './../compt/BUTTONS/LogoStacked.png';
-import NewBttn from './../compt/BUTTONS/SignIn-export.png';
+import NewBttn from './../compt/BUTTONS/New-export.png';
+import userbttn from './../compt/BUTTONS/User-export.png';
+import searchbttn from './../compt/BUTTONS/Magnifier-export.png';
 
 
 const Search = styled('div')(({ theme }) => ({
@@ -177,7 +179,7 @@ export function PrimarySearchAppBar() {
                     </Button>
                     <Search>
                         <SearchIconWrapper>
-                            <SearchIcon />
+                            <img src={searchbttn} width="16" height="16"/>
                         </SearchIconWrapper>
                         <StyledInputBase
                             sx={{ flex: 1, width: '50vw' }}
@@ -188,7 +190,7 @@ export function PrimarySearchAppBar() {
                     <Box sx={{ flexGrow: 1 }} />
                     <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
                         <Button href="/app/draft/0">
-                            <img src={NewBttn} width="185" height="42.5"/>
+                            <img src={NewBttn} width="92.5" height="42.5"/>
                         </Button>
                         {/* <Button size="large" aria-label="open user levels" color="inherit">
                             Mis niveles
@@ -200,18 +202,9 @@ export function PrimarySearchAppBar() {
                         >
                             Drafts
                         </Button> */}
-                        <IconButton
-                            size="large"
-                            edge="end"
-                            aria-label="account of current user"
-                            aria-controls={menuId}
-                            aria-haspopup="true"
-                            onClick={() => navigate('profile/0')}
-                            //onClick={handleProfileMenuOpen}
-                            color="inherit"
-                        >
-                            <AccountCircle />
-                        </IconButton>
+                        <Button aria-label="account of current user" aria-controls={menuId} aria-haspopup="true" href='/app/profile/0'>
+                            <img src={userbttn} width="42.5" height="42.5"/>
+                        </Button>      
                     </Box>
                     <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
                         <IconButton

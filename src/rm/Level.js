@@ -78,7 +78,7 @@ export const Level = () => {
             <Typography>{level.description}</Typography>
             <Typography>{`Dificultad ${level.difficulty}`}</Typography>
             <Typography sx={{ mb: theme.spacing(2) }}>{`Creado ${level.created}${level.updated && level.updated.valid ? ' · Actualizado: ' + level.updated.date : ''}`}</Typography>
-            <Unity style={{ height: '50vh', width: '80vw' }} unityProvider={unityProvider} />
+            <Unity style={{ height: '720px', width: '1280px' }} unityProvider={unityProvider} />
             {
                 otherLevels.length ? (
                     <Grid container spacing={1}>

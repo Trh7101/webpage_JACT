@@ -29,19 +29,15 @@ function Navigation() {
   return (
     <>
       <div className='navigation'>
-        <ul className='nav-logo'>
-          <Button href='/' color='inherit' disableElevation>
-            <img src={Logo} width="232.5" height="40.5" />
-          </Button>
-        </ul>
+        <Button href='/' disableElevation>
+          <img src={Logo} width="232.5" height="40.5" />
+        </Button>
         <div className='navigation-container.container'>
-          <ul classname='icon-menu'>
           <Box sx={{ display: { xs: 'block', md: 'none' } }} onClick={handleClick} >
             {click ?
               <img src={close} height='42.5' width='42.5'/> : <img src={burger} height='42.5' width='42.5'/>
             }
           </Box>
-          </ul>
           <ul className={click ? 'navigation-menu active' : 'navigation-menu'}>
             <Button variant='text' href="/">
               <img src={HomeB} width="92.5" height="42.5" />

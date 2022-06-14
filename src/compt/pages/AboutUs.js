@@ -20,9 +20,9 @@ import Container from '@mui/material/Container';
 export default function AboutUs() {
   return (
     <Container maxWidth={false} disableGutters={true}>
-      <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly', alignItems: 'stretch',  bgcolor: 'rgb(14,25,58)' }}>
+      <Grid sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly', alignItems: 'stretch',  bgcolor: 'rgb(14,25,58)' }}>
         
-        <Grid  sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end',  bgcolor: 'transparent' }}>
+        <Grid  sx={{ display: { xs: 'none', md: 'flex' }, flexDirection: 'column', alignItems: 'flex-end',  bgcolor: 'transparent' }}>
           <Box
             component="img"
             sx={{ m: 2, height: 80, width: 80, maxHeight: { xs: 0, md: 1000 }, maxWidth: { xs: 0, md: 1000 } }}
@@ -45,13 +45,27 @@ export default function AboutUs() {
             src={play4}/>
         </Grid>
 
+        <Grid sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center',  bgcolor: 'transparent'}}>
+          <Typography component="abouttext" variant="h8" m={2} alignSelf='flex-start' sx={{ writingMode: "vertical-rl",  fontFamily: 'PublicPixel', color: "rgb(255,255,255)"}}>
+            Salvador M.
+          </Typography>
+          <Typography component="abouttext" variant="h8" m={2} alignSelf='flex-start' sx={{ writingMode: "vertical-rl",  fontFamily: 'PublicPixel', color: "rgb(255,255,255)"}}>
+            Alex S.
+          </Typography>
+          <Typography component="abouttext" variant="h8" m={2} alignSelf='flex-start' sx={{ writingMode: "vertical-rl",  fontFamily: 'PublicPixel', color: "rgb(255,255,255)"}}>
+            Tonatiuh R.
+          </Typography>
+          <Typography component="abouttext" variant="h8" m={2} alignSelf='flex-start' sx={{ writingMode: "vertical-rl",  fontFamily: 'PublicPixel', color: "rgb(255,255,255)"}}>
+            Jacobo S.
+          </Typography>
+        </Grid>
+
         <Grid  sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center',  bgcolor: 'transparent'}}>
           <Box
             component="img"
             sx={{ m: 2, maxHeight: { xs: 275, md: 250 }, maxWidth: { xs: 300, md: 370 } }}
             alt="Player Select."
-            src={TextoHead}
-          />
+            src={TextoHead}/>
 
           <Box sx={{
             display: 'flex', flexDirection: 'row', alignItems: 'center',
@@ -108,9 +122,8 @@ export default function AboutUs() {
               Student at Tecnológico de Monterrey. Right now doing an intership at Microsoft. Wish me luck!!
             </Typography>
           </Box>
-
         </Grid>
-      </Box>
+      </Grid>
     </Container>
   );
 }

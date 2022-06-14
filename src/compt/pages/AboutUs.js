@@ -2,6 +2,7 @@ import * as React from 'react';
 import Cara1 from "../img/Programador1.jpeg"
 import Cara2 from '../img/Programador2.jpeg'
 import Cara3 from "../img/Programador3.jpeg"
+import Cara4 from "../img/Programador4.webp"
 import TextoHead from "../img/Head.png"
 import play1 from '../img/1P.png'
 import play2 from '../img/2P.png'
@@ -20,34 +21,37 @@ export default function AboutUs() {
   return (
     <Container maxWidth={false} disableGutters={true}>
       <Box sx={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly', alignItems: 'stretch',  bgcolor: 'rgb(14,25,58)' }}>
+        
         <Grid  sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end',  bgcolor: 'transparent' }}>
           <Box
-              component="img"
-              sx={{ m: 2, height: 80, width: 80, maxHeight: { xs: 0, md: 1000 }, maxWidth: { xs: 0, md: 1000 } }}
-              alt="Player Select."
-              src={play1}/>
+            component="img"
+            sx={{ m: 2, height: 80, width: 80, maxHeight: { xs: 0, md: 1000 }, maxWidth: { xs: 0, md: 1000 } }}
+            alt="Player Select."
+            src={play1}/>
           <Box
-              component="img"
-              sx={{ m: 2, height: 80, width: 80, maxHeight: { xs: 0, md: 1000 }, maxWidth: { xs: 0, md: 1000 } }}
-              alt="Player Select."
-              src={play2}/>
+            component="img"
+            sx={{ m: 2, height: 80, width: 80, maxHeight: { xs: 0, md: 1000 }, maxWidth: { xs: 0, md: 1000 } }}
+            alt="Player Select."
+            src={play2}/>
           <Box
-              component="img"
-              sx={{ m: 2, height: 80, width: 80, maxHeight: { xs: 0, md: 1000 }, maxWidth: { xs: 0, md: 1000 } }}
-              alt="Player Select."
-              src={play3}/>
+            component="img"
+            sx={{ m: 2, height: 80, width: 80, maxHeight: { xs: 0, md: 1000 }, maxWidth: { xs: 0, md: 1000 } }}
+            alt="Player Select."
+            src={play3}/>
           <Box
-              component="img"
-              sx={{ m: 2, height: 80, width: 80, maxHeight: { xs: 0, md: 1000 }, maxWidth: { xs: 0, md: 1000 } }}
-              alt="Player Select."
-              src={play4}/>
+            component="img"
+            sx={{ m: 2, height: 80, width: 80, maxHeight: { xs: 0, md: 1000 }, maxWidth: { xs: 0, md: 1000 } }}
+            alt="Player Select."
+            src={play4}/>
         </Grid>
+
         <Grid  sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center',  bgcolor: 'transparent'}}>
           <Box
-              component="img"
-              sx={{ m: 2, maxHeight: { xs: 275, md: 250 }, maxWidth: { xs: 300, md: 370 } }}
-              alt="Player Select."
-              src={TextoHead}/>
+            component="img"
+            sx={{ m: 2, maxHeight: { xs: 275, md: 250 }, maxWidth: { xs: 300, md: 370 } }}
+            alt="Player Select."
+            src={TextoHead}
+          />
 
           <Box sx={{
             display: 'flex', flexDirection: 'row', alignItems: 'center',
@@ -100,11 +104,11 @@ export default function AboutUs() {
               sx={{ m: 2, maxHeight: { xs: 275, md: 233 }, maxWidth: { xs: 200, md: 185 } }}
               alt="Programador más hardcore."
               src={Cara4}/>
-            <Typography component="abouttext" variant="h6" m={2} alignSelf='flex-start' fontFamily={'PublicPixel'}>
+            <Typography component="abouttext" variant="body2" m={2} alignSelf='flex-start' fontFamily={'PublicPixel'}>
               Student at Tecnológico de Monterrey. Right now doing an intership at Microsoft. Wish me luck!!
             </Typography>
           </Box>
-          
+
         </Grid>
       </Box>
     </Container>

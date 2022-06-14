@@ -91,6 +91,20 @@ export default function AboutUs() {
             </Typography>
           </Box>
 
+          <Box sx={{
+            display: 'flex', flexDirection: 'row', alignItems: 'center',
+            m: 1, maxWidth: 800, backgroundColor: 'rgb(118,66,138)',
+          }}>
+            <Box
+              component="img"
+              sx={{ m: 2, maxHeight: { xs: 275, md: 233 }, maxWidth: { xs: 200, md: 185 } }}
+              alt="Programador más hardcore."
+              src={Cara4}/>
+            <Typography component="abouttext" variant="h6" m={2} alignSelf='flex-start' fontFamily={'PublicPixel'}>
+              Student at Tecnológico de Monterrey. Right now doing an intership at Microsoft. Wish me luck!!
+            </Typography>
+          </Box>
+          
         </Grid>
       </Box>
     </Container>

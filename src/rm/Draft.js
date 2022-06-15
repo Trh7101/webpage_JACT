@@ -27,7 +27,7 @@ export const Draft = () => {
 
     function handleClickEnterFullscreen() {
         requestFullscreen(true);
-      }
+    }
 
     const load = async () => {
         id = parseInt(id)
@@ -81,16 +81,16 @@ export const Draft = () => {
 
     return (
         <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-        <Box sx={{ width: '1280px',padding: theme.spacing(2), display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-            <Typography variant='h5' sx={{ fontFamily: 'PublicPixel', alignSelf: 'flex-start' }}>{draft.name}</Typography>
-            <Typography sx={{ mb: theme.spacing(2), alignSelf: 'flex-start'}}>{draft.description}</Typography>
-            {
-                loadedFunc ? <Unity style={{ height: '720px', width: '1280px' }} unityProvider={unityProvider} /> : null
-            }
-            <Button onClick={handleClickEnterFullscreen} sx={{ alignSelf: 'flex-end'}}>
-                <img src={FullscreenBttn} width="185" height="42.5" />
-            </Button>
-        </Box>
+            <Box sx={{ width: '1280px',padding: theme.spacing(2), display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+                <Typography variant='h5' sx={{ fontFamily: 'PublicPixel', alignSelf: 'flex-start' }}>{draft.name}</Typography>
+                <Typography sx={{ mb: theme.spacing(2), alignSelf: 'flex-start'}}>{draft.description}</Typography>
+                {
+                    loadedFunc ? <Unity style={{ height: '720px', width: '1280px' }} unityProvider={unityProvider} /> : null
+                }
+                <Button onClick={handleClickEnterFullscreen} sx={{ alignSelf: 'flex-end'}}>
+                    <img src={FullscreenBttn} width="185" height="42.5" />
+                </Button>
+            </Box>
         </Box>
     );
 }

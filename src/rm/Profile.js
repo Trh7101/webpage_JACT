@@ -121,6 +121,9 @@ export const Profile = () => {
                         </CardActionArea>
                         <CardActions>
                             <Button size='small' onClick={() => {
+                                navigate(`/app/level/${c.id}`)
+                            }}>Edit</Button>
+                            <Button size='small' onClick={() => {
                                 navigate(`draft/${c.id}`)
                             }}>Analytics</Button>
                             <Button size='small' color='error' onClick={async () => {

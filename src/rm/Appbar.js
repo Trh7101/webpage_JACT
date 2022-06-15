@@ -202,7 +202,7 @@ export function PrimarySearchAppBar() {
                         >
                             Drafts
                         </Button> */}
-                        <Button aria-label="account of current user" aria-controls={menuId} aria-haspopup="true" onClick={() => navigate('/app/profile/0')}>
+                        <Button aria-label="account of current user" aria-controls={menuId} aria-haspopup="true" onClick={() => navigate('profile/0')}>
                             <img src={userbttn} width="42.5" height="42.5"/>
                         </Button>      
                     </Box>

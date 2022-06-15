@@ -7,39 +7,39 @@ export const useApi = () => {
     const API_BASE = "https://makerapi-production.up.railway.app"
 
     const getPopularCollections = async () => {
-        // const resp = await fetch(`${API_BASE}/collections/trending`, {
-        //     method: 'GET',
-        //     headers: {
-        //         Authorization: `Bearer ${auth.token()}`,
-        //     },
-        // })
-        // const res = await resp.json()
-        // if (resp.status !== 200) {
-        //     return [[], new Error(`could not fetch collections: [${resp.status}] ${JSON.stringify(res)}`)]
-        // }
-        const collections = [];
+        const resp = await fetch(`${API_BASE}/collections/trending`, {
+            method: 'GET',
+            headers: {
+                Authorization: `Bearer ${auth.token()}`,
+            },
+        })
+        const res = await resp.json()
+        if (resp.status !== 200) {
+            return [[], new Error(`could not fetch collections: [${resp.status}] ${JSON.stringify(res)}`)]
+        }
+        /*const collections = [];
         for (let i = 0; i < 10; i++) {
             collections.push({ id: i, name: `Intersting collection ${i}`, description: `Even more intersting description ${i}` },)
         }
-        return [collections, null];
+        return [collections, null];*/
     };
 
     const getPopularLevels = async () => {
-        // const resp = await fetch(`${API_BASE}/levels/trending`, {
-        //     method: 'GET',
-        //     headers: {
-        //         Authorization: `Bearer ${auth.token()}`,
-        //     },
-        // })
-        // const res = await resp.json()
-        // if (resp.status !== 200) {
-        //     return [[], new Error(`could not fetch collections: [${resp.status}] ${JSON.stringify(res)}`)]
-        // }
-        const collections = [];
+        const resp = await fetch(`${API_BASE}/levels/trending`, {
+            method: 'GET',
+            headers: {
+                Authorization: `Bearer ${auth.token()}`,
+            },
+        })
+        const res = await resp.json()
+        if (resp.status !== 200) {
+            return [[], new Error(`could not fetch collections: [${resp.status}] ${JSON.stringify(res)}`)]
+        }
+        /*const collections = [];
         for (let i = 0; i < 10; i++) {
             collections.push({ id: i, name: `Intersting level ${i}`, description: `Even more intersting description ${i}`, difficulty: 4 },)
         }
-        return [collections, null];
+        return [collections, null];*/
     };
 
     const getDraft = async (id) => {
@@ -71,18 +71,18 @@ export const useApi = () => {
     }
 
     const getLevel = async (id) => {
-        // const resp = await fetch(`${API_BASE}/levels/info/${id}`, {
-        //     method: 'GET',
-        //     headers: {
-        //         Authorization: `Bearer ${auth.token()}`,
-        //     },
-        // })
-        // const res = await resp.json();
-        // if (resp.status !== 200) {
-        //     return [{}, new Error(`invalid response: [${resp.status}] ${JSON.stringify(res)}`)]
-        // }
-        // return [res.level, null]
-        return [{ id: id, name: `Intersting level ${id}`, description: `Even more intersting description ${id}`, difficulty: 4, created: new Date(), user: { name: 'Dummy User', uid: 1 } }, null]
+        const resp = await fetch(`${API_BASE}/levels/info/${id}`, {
+            method: 'GET',
+            headers: {
+                Authorization: `Bearer ${auth.token()}`,
+            },
+        })
+        const res = await resp.json();
+        if (resp.status !== 200) {
+            return [{}, new Error(`invalid response: [${resp.status}] ${JSON.stringify(res)}`)]
+        }
+        return [res.level, null]
+        //return [{ id: id, name: `Intersting level ${id}`, description: `Even more intersting description ${id}`, difficulty: 4, created: new Date(), user: { name: 'Dummy User', uid: 1 } }, null]
     }
 
     const deleteLevel = async (id) => {
@@ -129,19 +129,19 @@ export const useApi = () => {
     }
 
     const getUserLevels = async (id) => {
-        // if (id === 0) id = auth.user.uid;
-        // const resp = await fetch(`${API_BASE}/levels/u/${id}`, {
-        //     method: 'GET',
-        //     headers: {
-        //         Authorization: `Bearer ${auth.token()}`,
-        //     },
-        // })
-        // const res = await resp.json();
-        // if (resp.status !== 200) {
-        //     return [{}, new Error(`invalid response: [${resp.status}] ${JSON.stringify(res)}`)]
-        // }
-        // return [res.levels, null]
-        return getPopularLevels()
+        if (id === 0) id = auth.user.uid;
+        const resp = await fetch(`${API_BASE}/levels/u/${id}`, {
+            method: 'GET',
+            headers: {
+                Authorization: `Bearer ${auth.token()}`,
+            },
+        })
+        const res = await resp.json();
+        if (resp.status !== 200) {
+            return [{}, new Error(`invalid response: [${resp.status}] ${JSON.stringify(res)}`)]
+        }
+        return [res.levels, null]
+        //return getPopularLevels()
     }
 
     return {
